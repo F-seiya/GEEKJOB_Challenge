@@ -1,0 +1,7 @@
+system_profiler | grep Processor
+    Apple: AUDynamicsProcessor:
+    Apple: AUVoiceProcessor:
+      Processor Name: Intel Core i7
+      Processor Speed: 2.8 GHz
+      Number of Processors: 1
+    
