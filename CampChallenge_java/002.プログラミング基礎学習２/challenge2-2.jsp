@@ -8,8 +8,10 @@
 
 <%
     String text = "A";
-    for(int i = 1; i <= 30; i++){
+    
+    for(int i = 1; i < 30; i++){
         text = text + "A";
+    
     }
     
     out.print(text);
