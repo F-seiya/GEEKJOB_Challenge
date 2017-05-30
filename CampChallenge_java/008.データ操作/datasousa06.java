@@ -42,8 +42,6 @@ public class datasousa06 extends HttpServlet {
         //Cookie作成
         Cookie co = new Cookie("Login",sdf.format(d) );
         
-        
-        
         //Cookieに反映
         response.addCookie(co);
            
@@ -55,10 +53,9 @@ public class datasousa06 extends HttpServlet {
               for(int i =0; i<cookie.length; i++){
                   if(cookie[i].getName().equals("Login")){
                       out.print("最後のログインは、" + cookie[i].getValue());
-                      
-                  }else{
-                      out.print("最初のログインです。");
+                      break;
                   }
+                      
                       
               }
           }
