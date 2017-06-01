@@ -1,0 +1,40 @@
+CREATE TABLE department(departmentID int NOT NULL PRIMARY KEY, departmentName varchar(255)) ENGINE = InnoDB;
+
+  INSERT INTO department(departmentID, departmentName) VALUES(1, '開発部');
+
+  INSERT INTO department(departmentID, departmentName) VALUES(2, '営業部');
+
+  INSERT INTO department(departmentID, departmentName) VALUES(3, '総務部');
+
+CREATE TABLE station(stationID int NOT NULL PRIMARY KEY, stationName varchar(255)) ENGINE = InnoDB;
+
+  INSERT INTO station(stationID, stationName) VALUE(1, '九段下');
+
+  INSERT INTO station(stationID, stationName) VALUE(2, '永田町');
+
+  INSERT INTO station(stationID, stationName) VALUE(3, '渋谷');
+
+  INSERT INTO station(stationID, stationName) VALUE(4, '神保町');
+
+  INSERT INTO station(stationID, stationName) VALUE(5, '上井草');
+
+CREATE TABLE user(userID int NOT NULL PRIMARY KEY, name varchar(255), tell varchar(255), age int, birthday date, departmentID int, stationID int, FOREIGN KEY(departmentID) REFERENCES department(departmentID), FOREIGN KEY(stationID) REFERENCES station(stationID)) ENGINE = InnoDB;
+
+  INSERT INTO user(userID, name, tell, age, birthday, departmentID, stationID)
+  VALUES(1, '田中実', '012-345-6789', 30, '1994-02-01', 3, 1);
+
+  INSERT INTO user(userID, name, tell, age, birthday, departmentID, stationID)
+  VALUES(2, '鈴木茂', '090-1122-3344', 37, '1987-08-12', 3, 4);
+
+  INSERT INTO user(userID, name, tell, age, birthday, departmentID, stationID)
+  VALUES(3, '鈴木実', '080-5566-7788', 24, '2000-12-24', 2, 5);
+
+  INSERT INTO user(userID, name, tell, age, birthday, departmentID, stationID)
+  VALUES(4, '佐藤清', '012-0987-6543', 19, '2005-08-01', 1, 5);
+
+  INSERT INTO user(userID, name, tell, age, birthday, departmentID, stationID)
+  VALUES(5, '高橋清', '090-9900-1234', 24, '2000-12-24', 3, 5);
+
+
+
+
