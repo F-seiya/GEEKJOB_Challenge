@@ -13,41 +13,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ *  メソッド　引数と戻り値2 課題
  * @author seiya
  */
 public class hikimodo02 extends HttpServlet {
     
+    int[] userdata ={1, 2, 3};
+    
     String[]profile(int n){
         
-        int a = 1;
-        int b = 2;
-        int c = 3;
+        String[] data1 ={"1", "a", "1991", "東京"};
+        String[] data2 ={"2", "b", "1992", null};
+        String[] data3 ={"3", "c", "1993", "京都"};
         
-        //型変換　int -> String
-        String aID = String.valueOf(a);
-        String bID = String.valueOf(b);
-        String cID = String.valueOf(c);
-    
-        String[] data1 ={aID, "a", "1991", "東京"};
-        String[] data2 ={bID, "b", "1992", null};
-        String[] data3 ={cID, "c", "1993", "京都"};
-        
-        switch(n){
-        
-            case 1:
-                return data1;
-            
-            case 2:
-                return data2;
+       switch(n){
+       
+           case 1:
+               return data1;
+               
+           case 2:
+               return data2;
               
-            case 3:
-                return data3;
-                
-            default:
-                return null;
-        }
-        
+           case 3:
+               return data3;
+             
+           default:
+               return null;
+       }      
     }
   
     
@@ -66,7 +58,7 @@ public class hikimodo02 extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             
            //profileメソッド内の配列(data1, data2, data3)を一つずつ取り出す。
-           for(int m =1; m< profile(m).length; m++){
+           for(int m =1; m<=userdata.length; m++){
                String[] prof = profile(m);
                
                //配列(data1, data2, data3)それぞれの中身(ID, 名前, 年, 出身)を一つずつ取り出す。
@@ -80,8 +72,7 @@ public class hikimodo02 extends HttpServlet {
                     
                 }
                 
-           }
-            
+           }      
                     
         }
     }
