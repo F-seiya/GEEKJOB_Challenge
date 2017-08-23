@@ -64,7 +64,6 @@ public class Add extends HttpServlet {
             if(hs.getAttribute("loginData")!= null && hs.getAttribute("userCart")== null){
                //ユーザー用のカート
                ArrayList<ItemBeans> userCart = new ArrayList<ItemBeans>();
-               
                userCart.add(addItem);
                hs.setAttribute("userCart", userCart);
             

@@ -73,19 +73,18 @@ public class BuyDataDAO {
             
             ArrayList<ItemBeans> boughtArray = new ArrayList<ItemBeans>();
             
-            while(rs.next()){
-                ItemBeans ib = new ItemBeans();
-                ib.setCode(rs.getString("itemCode"));
-                ib.setDeliveryType(rs.getInt("type"));
-                ib.setBuyDate(rs.getDate("buyDate"));
-                
-                //購入履歴のデータをArrayListに追加
-                boughtArray.add(ib);
-            }
-            System.out.println("購入履歴 取得");
-            
-            return boughtArray;
-        
+                while (rs.next()) {
+                    ItemBeans ib = new ItemBeans();
+                    ib.setCode(rs.getString("itemCode"));
+                    ib.setDeliveryType(rs.getInt("type"));
+                    ib.setBuyDate(rs.getDate("buyDate"));
+
+                    //購入履歴のデータをArrayListに追加
+                    boughtArray.add(ib);
+                }
+                System.out.println("購入履歴 取得");
+                return boughtArray;
+         
         }catch(SQLException se){
             System.out.println(se.getMessage());
             throw new SQLException(se);

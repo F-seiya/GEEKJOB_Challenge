@@ -36,11 +36,9 @@
             </form>
         <% } %>
         
-        <% if(uc.size()== 0 && hs.getAttribute("cartArray")==null){%>
-        
-                カートの中身はございません。
-                
-        <% }else if(hs.getAttribute("userCart")!= null){%>
+        <% if(hs.getAttribute("userCart")== null){ %>
+             カートの中身はありません。
+        <% }else{ %>
             
             <table border="1">
             
@@ -75,14 +73,14 @@
                 } 
                 out.print("[合計金額]"+ total +"円");
             %>
-              
-        <form action="BuyConfirm" method="GET">
-            <br><br><input type="submit" name="buyconfirmbtn" value="購入ページへ進む">
-        </form>
-              
-        
-        
+     
+            <%if(total>0){%>
+                <form action="BuyConfirm" method="GET">
+                <br><br><input type="submit" name="buyconfirmbtn" value="購入ページへ進む">
+                </form>
+            <% } %>
+            
         <% } %>
-
+       
     </body>
 </html>

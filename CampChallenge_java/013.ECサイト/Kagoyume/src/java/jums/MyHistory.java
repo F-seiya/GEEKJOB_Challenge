@@ -43,13 +43,15 @@ public class MyHistory extends HttpServlet {
             
             //"myhistory.jsp"(購入履歴閲覧)で表示するためのArrayList
             ArrayList<ItemBeans> historyArray = new ArrayList<ItemBeans>();
+            ItemBeans ib = new ItemBeans();
             
-            for(ItemBeans ib: boughtArray){
-                ib = YahooAPI.connectItemDescription(boughtArray.get(userID).getCode());
-                ib.setDeliveryType(boughtArray.get(userID).getDeliveryType());
-                ib.setBuyDate(boughtArray.get(userID).getBuyDate());
-                historyArray.add(ib);
+            for(int i =0; i<boughtArray.size(); i++){
+               ib = YahooAPI.connectItemDescription(boughtArray.get(i).getCode());
+               ib.setDeliveryType(boughtArray.get(i).getDeliveryType());
+               ib.setBuyDate(boughtArray.get(i).getBuyDate());
+               historyArray.add(ib);
             }
+            
             request.setAttribute("historyArray", historyArray);
                         
             request.getRequestDispatcher("/myhistory.jsp").forward(request, response);

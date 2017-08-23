@@ -67,7 +67,7 @@
             %>
             
            <form action="BuyComplete" method="POST">
-                <br><input type="radio" name="deliverytype" value="1">配送1
+                <br><input type="radio" name="deliverytype" value="1"　checked required>配送1
                     <input type="radio" name="deliverytype" value="2">配送2
                     <input type="radio" name="deliverytype" value="3">配送3<br><br>
                 

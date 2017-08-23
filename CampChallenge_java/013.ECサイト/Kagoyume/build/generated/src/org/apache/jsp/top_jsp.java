@@ -65,7 +65,18 @@ public final class top_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <h1>Kagoyume</h1>\n");
-      out.write("        Kagoyumeは、買い物気分が味わえる仮想空間です。<br>\n");
+      out.write("        ");
+ if(request.getAttribute("word") == null){ 
+      out.write("\n");
+      out.write("             Kagoyumeは、買い物気分が味わえる仮想空間です。<br>\n");
+      out.write("        ");
+ }else if(request.getAttribute("word").equals("No")){ 
+      out.write("\n");
+      out.write("            Kagoyumeは、買い物気分が味わえる仮想空間です。<br><br>\n");
+      out.write("            検索ワードの入力をお願いします。\n");
+      out.write("        ");
+ } 
+      out.write("\n");
       out.write("        \n");
       out.write("        ");
 if (ud == null) {
@@ -95,6 +106,7 @@ if (ud == null) {
       out.write("        ");
  }
       out.write("\n");
+      out.write("     \n");
       out.write("        \n");
       out.write("            <form action=\"Search\" method=\"GET\">\n");
       out.write("                <input type=\"text\" name=\"searchword\" size=\"30\">\n");

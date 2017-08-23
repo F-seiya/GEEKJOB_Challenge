@@ -47,10 +47,10 @@
 
         <% } %>
         
-        <%if(b_Array.size() ==0 ){ %>
+        <% if(b_Array.size()==0){ %>
+            購入履歴はありません。
+        <% }else{ %>
         
-            購入履歴はございません。
-        <% }else{ %> 
             <table border="1">
             
                 <th wideth="500">商品名</th>
@@ -59,16 +59,17 @@
                 <th wideth="200">購入日時</th>
                 <th>商品画像</th>
             
-              <% for(ItemBeans ucart: b_Array){ %>
+              <% for(ItemBeans ib: b_Array){ %>
                  <tr>
-                    <td><%=ucart.getName()%></td>
-                    <td><%=ucart.getPrice()%>円</td>
-                    <td><%=ucart.getDeliveryType()%></td>
-                    <td><%=ucart.getBuyDate()%></td>
-                    <td><img src="<%=ucart.getImage()%>"></td>   
+                    <td><%=ib.getName()%></td>
+                    <td><%=ib.getPrice()%>円</td>
+                    <td><%=ib.getDeliveryType()%></td>
+                    <td><%=ib.getBuyDate()%></td>  
+                    <td><img src="<%=ib.getImage()%>"></td>
                  </tr>
                <% } %>
             </table>   
+        
         <% } %>
        
     </body>

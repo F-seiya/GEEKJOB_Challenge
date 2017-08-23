@@ -44,7 +44,7 @@ public class Search extends HttpServlet {
             String word = request.getParameter("searchword");
             //検索ワードが未入力時の時に対応する分岐処理
             if(word.isEmpty()){
-                request.setAttribute("word", word);
+                request.setAttribute("word", "No");
                 request.getRequestDispatcher("/top.jsp").forward(request, response);
             }else{
                hs.setAttribute("word", word);

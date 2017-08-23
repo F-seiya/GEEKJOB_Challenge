@@ -53,16 +53,16 @@
         
         検索ワード:<%=hs.getAttribute("word")%><br> 
         
-        検索結果数:<%=sArray.get(sArray.size()-1).getTotalResultsAvailable()%><br>
+        <% if(sArray != null){ %>
         
-        <% if(sArray.size()!= 0){ %>
+          検索結果数:<%=sArray.get(sArray.size()-1).getTotalResultsAvailable()%><br>
         
-            <% for(ItemBeans ib: sArray){ %>
+            <% for(int i=0; i<20; i++){ %>
                 <table> 
-                    <td><a href="Item?code=<%=ib.getCode()%>"><%=ib.getName()%></a></td>
-                    <td><%=ib.getPrice()%>円</td>
-                    <td><img src="<%=ib.getImage()%>"></td>
-                </table>
+                    <td><a href="Item?code=<%=sArray.get(i).getCode()%>"><%=sArray.get(i).getName()%></a></td>
+                    <td><%=sArray.get(i).getPrice()%>円</td>
+                    <td><img src="<%=sArray.get(i).getImage()%>"></td>
+               </table>
             <% } %>
            
         

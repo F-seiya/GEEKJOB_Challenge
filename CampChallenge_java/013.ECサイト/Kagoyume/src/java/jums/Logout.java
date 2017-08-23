@@ -34,9 +34,8 @@ public class Logout extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             
             HttpSession hs = request.getSession();
-            //セッション情報の破棄(ログイン情報、ユーザーのカート情報)
-            hs.removeAttribute("loginData");
-            hs.removeAttribute("userCart");
+            //セッション破棄
+            hs.invalidate();
             
             //ログインページに戻す。
             request.getRequestDispatcher("/top.jsp").forward(request,response);

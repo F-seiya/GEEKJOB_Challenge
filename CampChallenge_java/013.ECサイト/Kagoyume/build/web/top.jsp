@@ -24,7 +24,12 @@
     </head>
     <body>
         <h1>Kagoyume</h1>
-        Kagoyumeは、買い物気分が味わえる仮想空間です。<br>
+        <% if(request.getAttribute("word") == null){ %>
+             Kagoyumeは、買い物気分が味わえる仮想空間です。<br>
+        <% }else if(request.getAttribute("word").equals("No")){ %>
+            Kagoyumeは、買い物気分が味わえる仮想空間です。<br><br>
+            検索ワードの入力をお願いします。
+        <% } %>
         
         <%if (ud == null) {%>
 
@@ -46,6 +51,7 @@
             </form>
 
         <% }%>
+     
         
             <form action="Search" method="GET">
                 <input type="text" name="searchword" size="30">

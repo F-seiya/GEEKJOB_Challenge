@@ -47,13 +47,9 @@ public class Cart extends HttpServlet {
                 hs.setAttribute("userCart", userCart);
                 //非ログイン状態のカート情報を削除
                 hs.removeAttribute("cartArray");
-                
-                request.getRequestDispatcher("/cart.jsp").forward(request, response);
-            
+           
             //ログイン状態でカートで中身がない時
             }else if(hs.getAttribute("loginData")!= null && hs.getAttribute("cartArray")== null){
-                
-                request.getRequestDispatcher("/cart.jsp").forward(request, response);
                 
             //非ログイン状態
             }else{
@@ -62,7 +58,7 @@ public class Cart extends HttpServlet {
                 request.getRequestDispatcher("/login.jsp").forward(request, response);
             }
             
-            
+            request.getRequestDispatcher("/cart.jsp").forward(request, response);
         
         }catch(Exception e){
             System.out.println(e.getMessage());
