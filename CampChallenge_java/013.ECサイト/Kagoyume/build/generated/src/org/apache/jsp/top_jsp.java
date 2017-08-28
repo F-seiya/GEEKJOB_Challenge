@@ -113,7 +113,6 @@ if (ud == null) {
       out.write("                <input type=\"submit\" name=\"sbmbtn\" value=\"検索\">\n");
       out.write("            </form>\n");
       out.write("        \n");
-      out.write("        \n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {

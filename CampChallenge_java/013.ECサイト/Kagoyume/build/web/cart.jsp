@@ -36,7 +36,7 @@
             </form>
         <% } %>
         
-        <% if(hs.getAttribute("userCart")== null){ %>
+        <% if(hs.getAttribute("userCart")==null || uc.size()== 0){ %>
              カートの中身はありません。
         <% }else{ %>
             

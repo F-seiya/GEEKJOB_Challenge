@@ -33,12 +33,12 @@
         <a href="MyHistory">購入履歴へ</a>
         
         <form action="MyUpdateConfirm" method="POST">
-            <input type="submit" name="update" value="会員情報更新">
-        </form>
+            <br><input type="submit" name="update" value="会員情報更新">
+        </form><br>
         
         <form action="MyDeleteConfirm" method="POST">
             <input type="submit" name="delete" value="会員情報削除">
-        </form>
+        </form><br>
         
         <%=jh.top()%>
     </body>

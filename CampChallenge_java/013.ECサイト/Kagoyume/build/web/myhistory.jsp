@@ -68,9 +68,11 @@
                     <td><img src="<%=ib.getImage()%>"></td>
                  </tr>
                <% } %>
-            </table>   
+            </table><br>  
         
         <% } %>
+        
+        <%=jh.top()%>  
        
     </body>
 </html>

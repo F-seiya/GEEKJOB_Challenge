@@ -58,6 +58,5 @@
                 <input type="submit" name="sbmbtn" value="検索">
             </form>
         
-        
     </body>
 </html>
